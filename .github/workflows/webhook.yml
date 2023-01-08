@@ -16,6 +16,8 @@ jobs:
       - name: get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35.4.0
+        with:
+          json: "true"
 
       - name: list all changed files
         run: |

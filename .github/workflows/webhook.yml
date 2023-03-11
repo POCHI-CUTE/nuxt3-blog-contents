@@ -27,4 +27,4 @@ jobs:
       - name: request to insert content to DB
         # if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: ${{ secrets.API_KEY }}" -d "${{ steps.changed-files.outputs.all_changed_files }}" https://us-central1-my-blog-f6525.cloudfunctions.net/postContent
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: ${{ secrets.API_KEY }}" -d "${{ steps.changed-files.outputs.all_changed_files }}" https://us-central1-my-blog-f6525.cloudfunctions.net/createArticle

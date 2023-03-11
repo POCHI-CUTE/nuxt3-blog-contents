@@ -14,5 +14,3 @@ change 内容
 change change
 
 change さらにチェンジ
-だｓだ
-rtetet

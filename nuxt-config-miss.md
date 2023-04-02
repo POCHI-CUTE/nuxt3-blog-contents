@@ -3,8 +3,8 @@ title: Nuxt3の環境構築で詰まった部分(PagesDir、nuxt.config.ts)
 tags:
 ---
 
-Nuxt3 ではディレクトリ構成がかなり Nuxt2 と比べてシンプルでした。
-Nuxt2 に似た構成でやりたいなということで`src`ディレクトリを作って以下に`Pages`ディレクトリなどを作ってアプリ作ろうとしていました。
+Nuxt3 ではディレクトリ構成がかなり Nuxt2 と比べてシンプルでした。  
+Nuxt2 に似た構成でやりたいなということで`src`ディレクトリを作って以下に`Pages`ディレクトリなどを作ってアプリ作ろうとしていました。  
 Nuxt3 を訳も分からず触ったため何点か詰まった部分があったので備忘録として書きます。
 
 # Pages ディレクトリを作ってファイルを作るだけじゃ反映されない
@@ -22,7 +22,7 @@ pages ディレクトリを使う際は、初期にある`app.vue`ファイル�
 </template>
 ```
 
-真ん中の`<NuxtPage/>`を入れることで Pages ディレクトリを読み込んで、使えるようになる。
+真ん中の`<NuxtPage/>`を入れることで Pages ディレクトリを読み込んで、使えるようになる。  
 `<NuxtLayout>`はこのままだと layouts ディレクトリの default.vue を適用できるようになる。
 https://v3.nuxtjs.org/guide/directory-structure/app
 https://v3.nuxtjs.org/guide/directory-structure/layouts
@@ -35,15 +35,15 @@ https://v3.nuxtjs.org/guide/directory-structure/layouts
 export default defineNuxtConfig({ ... rootDir: "src/" })
 ```
 
-https://qiita.com/teracy164/items/97f35b1550cd2080197b
+https://qiita.com/teracy164/items/97f35b1550cd2080197b  
 ただ config ファイルたちはルートディレクトリの下にあって欲しいなと思っていたところ、以下で設定できそうなことがわかりました。
 
 ```js
 export default defineNuxtConfig({ ... srcDir: "src/" })
 ```
 
-srcDir でソースディレクトリの変更を行うことができました。
-rootDir:
-https://v3.nuxtjs.org/api/configuration/nuxt-config#rootdir
-srcDir :
+srcDir でソースディレクトリの変更を行うことができました。  
+rootDir:  
+https://v3.nuxtjs.org/api/configuration/nuxt-config#rootdir  
+srcDir :  
 https://v3.nuxtjs.org/api/configuration/nuxt-config#srcdir

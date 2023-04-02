@@ -12,7 +12,7 @@ Nuxt3 を訳も分からず触ったため何点か詰まった部分があっ�
 Nuxt2 で勝手に Pages ディレクトリの下にあればルーティングされていたので脳死で Pages ディレクトリを作ったが反映されなかった。
 pages ディレクトリを使う際は、初期にある`app.vue`ファイルに
 
-```vue
+```js
 <template>
   <div>
     <NuxtLayout>
@@ -31,14 +31,14 @@ https://v3.nuxtjs.org/guide/directory-structure/layouts
 
 `Pages`ディレクトリに書いても全く反映されないので、なにがおかしいのか分からなかったのですが、まず以下の記事を見てとりあえず解決しました。原因は`src`を勝手に作ってそこにコードを置いて行ったので当たり前ですが`nuxt.config.ts`でルートディレクトリを変更する設定がいりました。
 
-```vue
+```js
 export default defineNuxtConfig({ ... rootDir: "src/" })
 ```
 
 https://qiita.com/teracy164/items/97f35b1550cd2080197b
 ただ config ファイルたちはルートディレクトリの下にあって欲しいなと思っていたところ、以下で設定できそうなことがわかりました。
 
-```vue
+```js
 export default defineNuxtConfig({ ... srcDir: "src/" })
 ```
 
